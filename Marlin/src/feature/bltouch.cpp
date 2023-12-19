@@ -43,7 +43,7 @@ bool BLTouch::od_5v_mode;         // Initialized by settings.load, 0 = Open Drai
 
 bool BLTouch::command(const BLTCommand cmd, const millis_t &ms) {
   const BLTCommand current = servo[Z_PROBE_SERVO_NR].read();
-  if (DEBUGGING(LEVELING)) SERIAL_ECHOLNPGM("CRTouch from ", current, " to ", cmd);
+  if (DEBUGGING(LEVELING)) SERIAL_ECHOLNPGM("BLTouch from ", current, " to ", cmd);
   // If the new command is the same, skip it (and the delay).
   // The previous write should've already delayed to detect the alarm.
   if (cmd != current) {
